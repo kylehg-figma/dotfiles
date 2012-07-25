@@ -11,7 +11,9 @@ alias cleanup="rm *~"
 source ~/.git-completion.sh
 
 # Put secret configuration settings in ~/.secrets
-source ~/.secrets
+if [ -e ~/.secrets ]; then
+    source ~/.secrets
+fi
 
 # Go: Combines cd and ls for directories, or opens files in EMACS.
 go() {
