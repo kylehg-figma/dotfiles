@@ -1,0 +1,62 @@
+[user]
+	name = Kyle Hardgrave
+	email = kyle@kylehardgrave.com
+
+[alias]
+	# Use template "!sh -c 'git command $0'" for positional arguments
+
+	# Branches and remotes
+	# Delete and remove an accepted branch:
+	accept = !sh -c 'git delete $0 && git remove $0'
+	b = branch
+	co = checkout
+	delete = branch -d 	# Delete a merged branch
+	merged = branch --merged 	# Show merged branches
+	new = checkout -b # Start a new branch
+	remove = !sh -c 'git push origin :$0' # Remove a remote branch
+	sync = pull --rebase origin master
+	unmerged = branch --no-merged # Show unmerged branches
+	unpush = push -f origin HEAD^:master # Undo a push
+
+	# Commits
+	amend = commit --amend 	# Amend the last commit
+	c = commit -m
+	ca = commit -am
+	discard = checkout -- # Discard changes in the working directory
+	# Undo the previous commit, and leave the changes in the index:
+	uncommit = reset --soft HEAD^
+	unstage = reset HEAD 	# Unstage a file
+	unstash = stash pop # Remove from the stash and apply
+
+	# Diffs and feedback
+  difflast = diff HEAD^ # diff last committed change
+	last = 	log -1 HEAD --stat --abbrev-commit 	# Show the last commit
+	s = status
+
+[core]
+	excludesfile = ~/.gitignore_global
+
+[color]
+	ui = true
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+	remote = green
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+[color "status"]
+	added = yellow
+	changed = green
+	untracked = cyan
+
+[help]
+	# Automatically correct and execute mistyped commands after waiting
+	# for the given number of deciseconds (0.1 sec). If more than one
+	# command can be deduced from the entered text, nothing will be
+	# executed. If the value of this option is negative, the corrected
+	# command will be executed immediately. If the value is 0 - the
+	# command will be just shown but not executed. This is the default.
+	autocorrect = -1
