@@ -33,6 +33,10 @@
 	last = 	log -1 HEAD --stat --abbrev-commit 	# Show the last commit
 	s = status
 
+	# Ignore changes to tracked files
+	ignore = update-index --assume-unchanged
+	unignore = update-index --no-assume-unchanged
+
 [core]
 	excludesfile = ~/.gitignore_global
 
