@@ -63,9 +63,9 @@ function listprinters() {
 PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
 export PATH
 
-# Ron Shapiro's Branch highlighting
-#export PS1="\[\e[4;32m\]\w\e[m\]\$(parse_git master) $ "
-#function parse_git {
+# Branch highlighting
+# Cf. https://gist.github.com/31967
+#function set_git_prompt {
 #    git_branch="$(__git_ps1 "%s")"
 #    output="${git_branch}"
 #    if [[ -z $output ]]; then
@@ -99,3 +99,8 @@ export PATH
 #
 #    echo -e " $output"
 #}
+function set_bash_prompt {
+    PS1="\u@\h:\W$(__git_ps1) $ "
+}
+
+PROMPT_COMMAND=set_bash_prompt
