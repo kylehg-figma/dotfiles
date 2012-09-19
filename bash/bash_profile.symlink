@@ -23,6 +23,21 @@ go() {
 export EDITOR=emacs
 
 
+# Set permissions for a web directory
+webify_permissions() {
+		for i in $(ls $1); do
+				if [ -d $i ]; then
+						chmod 755 $i
+						echo "Setting directory $i to 755"
+						webify_permissions $i
+				else
+						chmod 644 $i
+						echo "Setting file $i to 644"
+				fi
+		done
+}
+
+
 # Block or unblock Facebook
 blockfb() {
     if [ -f /etc/hosts-fb ]; then # Facebook is blocked 
