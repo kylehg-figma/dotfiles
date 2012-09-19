@@ -8,7 +8,7 @@ alias lla="l -la"
 alias cleanup="rm *~"
 
 # Git Completion
-if [ -e  ~/.git-completion.sh]; then
+if [ -e ~/.git-completion.sh ]; then
 		source ~/.git-completion.sh
 fi
 
