@@ -8,6 +8,11 @@
 (setq line-number-mode t)
 (setq column-number-mode t)
 
+;; Go Mode
+(autoload 'go-mode "go-mode" "Go Mode" t)
+(add-to-list 'auto-mode-alist '("\\.go\\'" . go-mode))
+
+
 ;; PHP Mode
 (autoload 'php-mode "php-mode" "PHP Mode" t)
 (add-to-list 'auto-mode-alist '("\\.php\\'" . php-mode))

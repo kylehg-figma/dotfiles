@@ -1,3 +1,6 @@
+export GOPATH=$HOME/Documents/Projects/golang
+export PATH=$PATH:$GOPATH/bin
+
 # Helpful aliases
 alias ls="ls -G"
 alias l="ls"
