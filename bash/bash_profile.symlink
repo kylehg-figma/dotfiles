@@ -1,3 +1,6 @@
+export GOPATH=$HOME/Documents/Projects/golang
+export PATH=$PATH:$GOPATH/bin
+
 # Helpful aliases
 alias ls="ls --color=always"
 alias l="ls"
@@ -18,7 +21,7 @@ if [ -e ~/.secrets ]; then
 fi
 
 # Go: Combines cd and ls for directories, or opens files in EMACS.
-go() {
+g() {
     cd $1 2> /dev/null && ls || $EDITOR $1
 }
 
