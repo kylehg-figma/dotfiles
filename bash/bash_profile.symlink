@@ -71,7 +71,7 @@ runjava() {
 # Fancy SEAS printing
 # Usage: seaspring foo.pdf
 function seasprint() {
-   cat "$1" | ssh kyleh@eniac.seas.upenn.edu lpr -P169
+   cat "$1" | ssh kyleh@eniac.seas.upenn.edu lpr -P169 -o Duplex=DuplexNoTumble
 }
 
 function listprinters() {
