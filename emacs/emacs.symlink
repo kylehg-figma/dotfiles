@@ -8,10 +8,17 @@
 (setq line-number-mode t)
 (setq column-number-mode t)
 
+;; Coq
+(load-file "~/.emacs.d/ProofGeneral-4.2/generic/proof-site.el")
+(global-set-key (kbd "C-c RET") 'proof-goto-point)
+
 ;; Go Mode
 (autoload 'go-mode "go-mode" "Go Mode" t)
 (add-to-list 'auto-mode-alist '("\\.go\\'" . go-mode))
 
+;; OCaml Mode
+(autoload 'tuareg-mode "tuareg-mode" "Tuareg Mode" t)
+(add-to-list 'auto-mode-alist '("\\.ml\\'" . tuareg-mode))
 
 ;; PHP Mode
 (autoload 'php-mode "php-mode" "PHP Mode" t)
