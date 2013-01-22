@@ -1,6 +1,3 @@
-export GOPATH=$HOME/Documents/Projects/golang
-export PATH=$PATH:$GOPATH/bin
-
 # Helpful aliases
 alias ls="ls -G"
 alias l="ls"
@@ -43,7 +40,7 @@ webify_permissions() {
 
 # Block or unblock Facebook
 blockfb() {
-    if [ -f /etc/hosts-fb ]; then # Facebook is blocked 
+    if [ -f /etc/hosts-fb ]; then # Facebook is blocked
         read -sp "Are you sure you want to unblock Facebook? " response
         if [ $response != "YesI'mfucking*positive*" ]; then
             echo; echo "Sorry, I guess you're not sure."
@@ -80,7 +77,10 @@ function listprinters() {
 
 
 # Setting PATH for Python 2.7
+#export PYTHONPATH="/usr/local/lib/python2.7/site-packages:$PYTHONPATH"
+export GOPATH="${HOME}/Documents/Projects/golang"
 PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
+PATH="${GOPTATH}/bin:${PATH}"
 export PATH
 
 # Customize prompt
