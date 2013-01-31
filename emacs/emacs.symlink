@@ -19,6 +19,7 @@
 ;; OCaml Mode
 (autoload 'tuareg-mode "tuareg-mode" "Tuareg Mode" t)
 (add-to-list 'auto-mode-alist '("\\.ml\\'" . tuareg-mode))
+(add-to-list 'auto-mode-alist '("\\.mli\\'" . tuareg-mode))
 
 ;; PHP Mode
 (autoload 'php-mode "php-mode" "PHP Mode" t)
@@ -37,8 +38,8 @@
 (add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
 
 ;; Less CSS
-;;(autoload 'less-css-mode "less-css-mode" "LESS Mode" t)
-;;(add-to-list 'auto-mode-alist '("\\.less\\'" . less-css-mode))
+(autoload 'less-css-mode "less-css-mode" "LESS Mode" t)
+(add-to-list 'auto-mode-alist '("\\.less\\'" . less-css-mode))
 
 ;; CoffeeScript
 (autoload 'coffee-mode "coffee-mode" "CoffeeScript Mode" t)
