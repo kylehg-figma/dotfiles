@@ -27,6 +27,8 @@
 	uncommit = reset --soft HEAD^
 	unstage = reset HEAD 	# Unstage a file
 	unstash = stash pop # Remove from the stash and apply
+  # Save a snapshot stash without changing working tree
+  snapshot = !git stash save "snapshot: $(date)" && git stash apply "stash@{0}"
 
 	# Diffs and feedback
   difflast = diff HEAD^ # diff last committed change
@@ -34,8 +36,10 @@
 	s = status
 
 	# Ignore changes to tracked files
-	ignore = update-index --assume-unchanged
-	unignore = update-index --no-assume-unchanged
+	assume   = update-index --assume-unchanged
+	unassume = update-index --no-assume-unchanged
+	assumed  = "!git ls-files -v | grep ^h | cut -c 3-"
+
 
 [core]
 	excludesfile = ~/.gitignore_global

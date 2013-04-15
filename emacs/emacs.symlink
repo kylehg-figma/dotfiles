@@ -3,6 +3,8 @@
 
 ;; Set default tab width
 (setq default-tab-width 4)
+(setq-default indent-tabs-mode nil)
+(setq scss-compile-at-save nil)
 
 ;; Show column numbers
 (setq line-number-mode t)
@@ -19,6 +21,9 @@
 ;; OCaml Mode
 (autoload 'tuareg-mode "tuareg-mode" "Tuareg Mode" t)
 (add-to-list 'auto-mode-alist '("\\.ml\\'" . tuareg-mode))
+(add-to-list 'auto-mode-alist '("\\.mli\\'" . tuareg-mode))
+(add-to-list 'auto-mode-alist '("\\.mly\\'" . tuareg-mode))
+(add-to-list 'auto-mode-alist '("\\.mll\\'" . tuareg-mode))
 
 ;; PHP Mode
 (autoload 'php-mode "php-mode" "PHP Mode" t)
@@ -37,8 +42,8 @@
 (add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
 
 ;; Less CSS
-;;(autoload 'less-css-mode "less-css-mode" "LESS Mode" t)
-;;(add-to-list 'auto-mode-alist '("\\.less\\'" . less-css-mode))
+(autoload 'less-css-mode "less-css-mode" "LESS Mode" t)
+(add-to-list 'auto-mode-alist '("\\.less\\'" . less-css-mode))
 
 ;; CoffeeScript
 (autoload 'coffee-mode "coffee-mode" "CoffeeScript Mode" t)
@@ -67,7 +72,7 @@
  ;; If there is more than one, they won't work right.
  '(css-indent-offset 2)
  '(gud-gdb-command-name "gdb --annotate=1")
- '(indent-tabs-mode t)
+ '(inhibit-startup-screen t)
  '(js2-basic-offset 2)
  '(js2-mirror-mode t)
  '(large-file-warning-threshold nil)

@@ -1,6 +1,3 @@
-export GOPATH=$HOME/Documents/Projects/golang
-export PATH=$PATH:$GOPATH/bin
-
 # Helpful aliases
 alias ls="ls --color=always"
 alias l="ls"
@@ -25,6 +22,8 @@ g() {
     cd $1 2> /dev/null && ls || $EDITOR $1
 }
 
+#export EDITOR=/Applications/Emacs.app/Contents/MacOS/Emacs
+alias emacs=/Applications/Emacs.app/Contents/MacOS/Emacs
 export EDITOR=emacs
 
 
@@ -45,7 +44,7 @@ webify_permissions() {
 
 # Block or unblock Facebook
 blockfb() {
-    if [ -f /etc/hosts-fb ]; then # Facebook is blocked 
+    if [ -f /etc/hosts-fb ]; then # Facebook is blocked
         read -sp "Are you sure you want to unblock Facebook? " response
         if [ $response != "YesI'mfucking*positive*" ]; then
             echo; echo "Sorry, I guess you're not sure."
@@ -82,7 +81,10 @@ function listprinters() {
 
 
 # Setting PATH for Python 2.7
+export PYTHONPATH="/usr/local/lib/python2.7/site-packages:/Applications/GoogleAppEngineLauncher.app/Contents/Resources/GoogleAppEngine-default.bundle/Contents/Resources/google_appengine/lib/yaml/lib:/Applications/GoogleAppEngineLauncher.app/Contents/Resources/GoogleAppEngine-default.bundle/Contents/Resources/google_appengine:/Applications/GoogleAppEngineLauncher.app/Contents/Resources/GoogleAppEngine-default.bundle/Contents/Resources/google_appengine/lib/django_1_3:${PYTHONPATH}"
+export GOPATH="${HOME}/Documents/Projects/golang"
 PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
+PATH="${GOPTATH}/bin:${PATH}"
 export PATH
 
 # Customize prompt
