@@ -7,6 +7,8 @@ alias lla="l -la"
 
 alias cleanup="rm *~"
 
+alias runmysql="sudo /usr/local/mysql/bin/mysqld_safe"
+
 # Git Completion
 source ~/.git-completion.sh
 
@@ -23,6 +25,9 @@ g() {
 #export EDITOR=/Applications/Emacs.app/Contents/MacOS/Emacs
 alias emacs=/Applications/Emacs.app/Contents/MacOS/Emacs
 export EDITOR=emacs
+
+# Increase default bash history size
+HISTFILESIZE=2500
 
 
 # Set permissions for a web directory
