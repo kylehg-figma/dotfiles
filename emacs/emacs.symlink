@@ -11,7 +11,7 @@
 (setq column-number-mode t)
 
 ;; Coq
-(load-file "~/.emacs.d/ProofGeneral-4.2/generic/proof-site.el")
+(load-file "~/.emacs.d/modes/proof-general/generic/proof-site.el")
 (global-set-key (kbd "C-c RET") 'proof-goto-point)
 
 ;; Go Mode
@@ -58,7 +58,7 @@
 (require 'clojure-mode)
 
 ;; Haskell
-(load "~/.emacs.d/haskell-mode/haskell-site-file")
+(load "~/.emacs.d/modes/haskell-mode/haskell-site-file")
 (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
 ;;(add-hook 'haskell-mode-hook 'turn-on-haskell-indent)

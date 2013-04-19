@@ -1,5 +1,5 @@
 # Helpful aliases
-alias ls="ls -G"
+alias ls="ls --color=always"
 alias l="ls"
 alias ll="l -l"
 alias la="l -a"
@@ -10,7 +10,9 @@ alias cleanup="rm *~"
 alias runmysql="sudo /usr/local/mysql/bin/mysqld_safe"
 
 # Git Completion
-source ~/.git-completion.sh
+if [ -e ~/.git-completion.sh ]; then
+		source ~/.git-completion.sh
+fi
 
 # Put secret configuration settings in ~/.secrets
 if [ -e ~/.secrets ]; then
