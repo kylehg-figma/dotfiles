@@ -14,6 +14,13 @@
 (load-file "~/.emacs.d/modes/proof-general/generic/proof-site.el")
 (global-set-key (kbd "C-c RET") 'proof-goto-point)
 
+;; Yaml Mode
+(autoload 'yaml-mode "yaml-mode" "Yaml Mode" t)
+(add-to-list 'auto-mode-alist '("\\.yaml\\'" . yaml-mode))
+
+;; Use C Mode for OAT
+(add-to-list 'auto-mode-alist '("\\.oat\\'" . c-mode))
+
 ;; Go Mode
 (autoload 'go-mode "go-mode" "Go Mode" t)
 (add-to-list 'auto-mode-alist '("\\.go\\'" . go-mode))
