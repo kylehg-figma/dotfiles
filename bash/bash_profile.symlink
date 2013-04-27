@@ -7,6 +7,7 @@ alias lla="l -la"
 
 alias cleanup="rm *~"
 alias runmysql="sudo /usr/local/mysql/bin/mysqld_safe"
+alias untar="tar -xzvf"
 
 # Git Completion
 if [ -e ~/.git-completion.sh ]; then
