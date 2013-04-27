@@ -6,6 +6,7 @@ alias la="l -a"
 alias lla="l -la"
 
 alias cleanup="rm *~"
+alias runmysql="sudo /usr/local/mysql/bin/mysqld_safe"
 
 # Git Completion
 if [ -e ~/.git-completion.sh ]; then
