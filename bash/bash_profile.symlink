@@ -87,6 +87,7 @@ export PYTHONPATH="/usr/local/lib/python2.7/site-packages:/Applications/GoogleAp
 export GOPATH="${HOME}/Documents/Projects/golang"
 PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
 PATH="${GOPTATH}/bin:${PATH}"
+PATH="${HOME}/.cabal/bin:${PATH}"
 export PATH
 
 # Customize prompt
