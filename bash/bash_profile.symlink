@@ -84,7 +84,7 @@ function listprinters() {
 
 # Setting PATH for Python 2.7
 export PYTHONPATH="/usr/local/lib/python2.7/site-packages:/Applications/GoogleAppEngineLauncher.app/Contents/Resources/GoogleAppEngine-default.bundle/Contents/Resources/google_appengine/lib/yaml/lib:/Applications/GoogleAppEngineLauncher.app/Contents/Resources/GoogleAppEngine-default.bundle/Contents/Resources/google_appengine:/Applications/GoogleAppEngineLauncher.app/Contents/Resources/GoogleAppEngine-default.bundle/Contents/Resources/google_appengine/lib/django_1_3:${PYTHONPATH}"
-export GOPATH="${HOME}/Documents/Projects/golang"
+export GOPATH="${HOME}/projects/golang"
 PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
 PATH="${GOPTATH}/bin:${PATH}"
 PATH="${HOME}/.cabal/bin:${PATH}"
