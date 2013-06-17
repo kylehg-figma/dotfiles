@@ -68,3 +68,6 @@
 	# command will be executed immediately. If the value is 0 - the
 	# command will be just shown but not executed. This is the default.
 	autocorrect = -1
+
+[push]
+  default = current
