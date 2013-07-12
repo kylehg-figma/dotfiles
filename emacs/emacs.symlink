@@ -10,6 +10,12 @@
 (setq line-number-mode t)
 (setq column-number-mode t)
 
+;; Show whitespace
+(setq-default show-trailing-whitespace t)
+
+;; Max line length 80
+(setq-default fill-column 80)
+
 ;; Coq
 (load-file "~/.emacs.d/modes/proof-general/generic/proof-site.el")
 (global-set-key (kbd "C-c RET") 'proof-goto-point)
