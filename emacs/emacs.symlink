@@ -14,7 +14,7 @@
 (setq-default show-trailing-whitespace t)
 
 ;; Max line length 80
-(setq-default fill-column 80)
+(setq-default fill-column 79)
 
 ;; Coq
 (load-file "~/.emacs.d/modes/proof-general/generic/proof-site.el")
