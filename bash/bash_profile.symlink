@@ -6,7 +6,8 @@ alias la="l -a"
 alias lla="l -la"
 
 alias cleanup="rm *~"
-alias runmysql="sudo /usr/local/mysql/bin/mysqld_safe"
+alias runmysql="sudo /usr/local/mysql/bin/mysqld_safe &"
+alias stopmysql="sudo /usr/local/mysql/bin/mysqladmin shutdown"
 alias untar="tar -xzvf"
 
 # Git Completion
