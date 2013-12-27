@@ -8,6 +8,8 @@ alias lla="l -la"
 alias cleanup="rm *~"
 alias runmysql="sudo /usr/local/mysql/bin/mysqld_safe &"
 alias stopmysql="sudo /usr/local/mysql/bin/mysqladmin shutdown"
+alias runpostgres="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
+alias stoppostgres="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
 alias untar="tar -xzvf"
 
 # Git Completion
@@ -94,3 +96,8 @@ export PATH
 
 # Customize prompt
 source ~/.bash_prompt
+
+# Setting PATH for Python 2.7
+# The orginal version is saved in .bash_profile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
+export PATH

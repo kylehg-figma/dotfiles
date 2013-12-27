@@ -19,6 +19,10 @@
 ;; Max line length 80
 (setq-default fill-column 99)
 
+;; Netlogo
+(autoload 'netlogo-mode "netlogo-mode" "NetLogo Mode" t)
+(add-to-list 'auto-mode-alist '("\\.nlogo\\'" . netlogo-mode))
+
 ;; Coq
 (load-file "~/.emacs.d/modes/proof-general/generic/proof-site.el")
 (global-set-key (kbd "C-c RET") 'proof-goto-point)
