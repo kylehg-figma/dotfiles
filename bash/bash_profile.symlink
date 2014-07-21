@@ -105,3 +105,6 @@ export PATH
 
 # Docker shit
 export DOCKER_HOST='tcp://localhost:4243'
+
+# Medium Boxen environment
+[ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
