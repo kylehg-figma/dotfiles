@@ -8,6 +8,7 @@ alias lla="l -la"
 alias cleanup="rm *~"
 alias untar="tar -xzvf"
 alias subl="/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl"
+alias servedir="python -m SimpleHTTPServer"
 
 # Medium-specific aliases
 alias gm="g ~/src/medium2"
