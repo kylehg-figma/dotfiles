@@ -17,7 +17,7 @@
 (setq-default show-trailing-whitespace t)
 
 ;; Max line length 80
-(setq-default fill-column 99)
+(setq-default fill-column 79)
 
 ;; Netlogo
 (autoload 'netlogo-mode "netlogo-mode" "NetLogo Mode" t)
