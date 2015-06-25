@@ -33,7 +33,9 @@ source ~/.bash_prompt
 [ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
 
 # Golang
-export GOPATH='/Users/kylehardgrave/golang'### Added by the Heroku Toolbelt
+export GOPATH='/Users/kylehardgrave/golang'
+
+### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
 # Add GHC 7.8.3 to the PATH, via http://ghcformacosx.github.io/
