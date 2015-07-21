@@ -33,7 +33,7 @@ source ~/.bash_prompt
 [ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
 
 # Golang
-export GOPATH="~/golang"
+export GOPATH="$HOME/golang"
 export GOPATH="$GOPATH/go-forks:$GOPATH"
 
 # Added by the Heroku Toolbelt
