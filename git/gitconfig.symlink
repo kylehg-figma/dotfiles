@@ -14,7 +14,6 @@
   merged = branch --merged  # Show merged branches
   new = checkout -b # Start a new branch
   remove = !sh -c 'git push origin :$0' # Remove a remote branch
-  sync = pull --rebase origin master
   unmerged = branch --no-merged # Show unmerged branches
   unpush = push -f origin HEAD^:master # Undo a push
 
@@ -49,7 +48,7 @@
 
 
 [core]
-	excludesfile = /opt/boxen/config/git/gitignore
+	excludesfile = /Users/kyle/.gitignore_global
 
 [color]
   ui = true
