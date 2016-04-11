@@ -50,3 +50,6 @@ fi
 
 # Postgres
 export PATH="$PATH:/Applications/Postgres.app/Contents/Versions/9.4/bin"
+
+# AWS CLI completion
+complete -C aws_completer aws
