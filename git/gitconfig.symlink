@@ -9,6 +9,7 @@
   # Delete and remove an accepted branch:
   accept = !sh -c 'git delete $0 && git remove $0'
   b = branch
+  bv = branch -vv
   co = checkout
   delete = branch -d  # Delete a merged branch
   merged = branch --merged  # Show merged branches
