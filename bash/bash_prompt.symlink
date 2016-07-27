@@ -100,25 +100,18 @@ function set_virtualenv () {
 
 # Set the full bash prompt.
 function set_bash_prompt () {
-  # Set the PROMPT_SYMBOL variable. We do this first so we don't lose the
-  # return value of the last command.
-#  set_prompt_symbol $?
-
   # Set the PYTHON_VIRTUALENV variable.
   set_virtualenv
 
-  # Set the BRANCH variable.
-#  if is_git_repository ; then
-#    set_git_branch
-#  else
-#    BRANCH=''
-#  fi
-
-  # Set the bash prompt variable.
-#  PS1="
-#${PYTHON_VIRTUALENV}${GREEN}\u@\h ${YELLOW}\W${COLOR_NONE} ${BRANCH}
-#${PROMPT_SYMBOL} "
-	PS1="${PYTHON_VIRTUALENV}\u@\h:\W$(__git_ps1) $ "
+  BASH_PROMPT_STR="${PYTHON_VIRTUALENV}\u@\h:\W$(__git_ps1) $ "
+  case $TERM in
+    xterm*)
+      PS1="\[\033]0;\u@\h: \w\007\]$BASH_PROMPT_STR"
+      ;;
+    *)
+      PS1=BASH_PROMPT_STR
+      ;;
+  esac
 }
 
 # Tell bash to execute this function just before displaying its prompt.
