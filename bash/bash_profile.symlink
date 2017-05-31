@@ -10,9 +10,6 @@ alias untar="tar -xzvf"
 alias subl="/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl"
 alias servedir="python -m SimpleHTTPServer"
 
-# Medium-specific aliases
-alias gm="g ~/src/medium2"
-
 export EDITOR=emacs
 
 # Git completion
@@ -28,9 +25,6 @@ g() {
 
 # Customize prompt
 source ~/.bash_prompt
-
-# Medium Boxen environment
-[ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
 
 # Golang
 export GOPATH="$HOME/golang"
