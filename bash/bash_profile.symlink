@@ -7,7 +7,7 @@ alias lla="l -la"
 
 alias cleanup="rm *~"
 alias untar="tar -xzvf"
-alias subl="/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl"
+alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
 alias servedir="python -m SimpleHTTPServer"
 alias linkfrom="ln -s"
 
@@ -48,3 +48,7 @@ export PATH="$PATH:/Applications/Postgres.app/Contents/Versions/9.4/bin"
 
 # AWS CLI completion
 complete -C aws_completer aws
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
