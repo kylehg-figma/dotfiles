@@ -11,6 +11,9 @@ alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
 alias servedir="python -m SimpleHTTPServer"
 alias linkfrom="ln -s"
 
+# Potentially risky but ¯\_(ツ)_/¯
+alias python="python3"
+
 export EDITOR=emacs
 
 # Git completion
@@ -44,7 +47,7 @@ fi
 . $HOME/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
 
 # Postgres
-export PATH="$PATH:/Applications/Postgres.app/Contents/Versions/9.4/bin"
+export PATH="$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin"
 
 # AWS CLI completion
 complete -C aws_completer aws
