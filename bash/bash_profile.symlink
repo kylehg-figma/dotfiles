@@ -13,6 +13,7 @@ alias linkfrom="ln -s"
 
 # Potentially risky but ¯\_(ツ)_/¯
 alias python="python3"
+alias pip="pip3"
 
 export EDITOR=emacs
 
