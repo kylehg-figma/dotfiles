@@ -11,6 +11,7 @@
   b = branch
   bv = branch -vv
   co = checkout
+  pu = push -u
   delete = branch -d  # Delete a merged branch
   merged = branch --merged  # Show merged branches
   new = checkout -b # Start a new branch
