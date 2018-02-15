@@ -18,6 +18,9 @@ alias pip="pip3"
 # https://hub.github.com/
 alias git="hub"
 
+# Shortcut to most used repo
+alias gm="g ~/mobilize"
+
 export EDITOR=emacs
 
 # Git completion
