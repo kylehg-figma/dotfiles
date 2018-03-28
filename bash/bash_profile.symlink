@@ -19,7 +19,7 @@ alias pip="pip3"
 alias git="hub"
 
 # Shortcut to most used repo
-alias gm="g ~/mobilize"
+alias gm="g ~/mobilize/core"
 
 export EDITOR=emacs
 

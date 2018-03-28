@@ -18,6 +18,7 @@
   remove = !sh -c 'git push origin :$0' # Remove a remote branch
   unmerged = branch --no-merged # Show unmerged branches
   unpush = push -f origin HEAD^:master # Undo a push
+  pr = !git push -u && git pull-request -c
 
   # Commits
   amend = commit --amend  # Amend the last commit
