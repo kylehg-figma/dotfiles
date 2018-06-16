@@ -23,6 +23,8 @@ alias gm="g ~/mobilize/core"
 
 export EDITOR=emacs
 
+export HISTCONTROL=ignorespace
+
 # Git completion
 [ -e ~/.git-completion.sh ] && source ~/.git-completion.sh
 
