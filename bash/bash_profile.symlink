@@ -19,7 +19,7 @@ alias pip="pip3"
 alias git="hub"
 
 # Shortcut to most used repo
-alias gm="g ~/mobilize/core"
+alias gm="g ~/mobilize"
 
 export EDITOR=emacs
 
@@ -67,3 +67,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 export PATH="$HOME/.cargo/bin:$PATH"
+
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi

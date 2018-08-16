@@ -1,6 +1,6 @@
 [user]
   name = Kyle Hardgrave
-  email = kyle@kylehardgrave.com
+  email = kylehardgrave@gmail.com
 
 [alias]
   # Use template "!sh -c 'git command $0'" for positional arguments
@@ -89,6 +89,7 @@
   clean = git lfs clean %f
   smudge = git lfs smudge %f
   required = true
+  process = git-lfs filter-process
 [difftool "sourcetree"]
   cmd = opendiff \"$LOCAL\" \"$REMOTE\"
   path =
