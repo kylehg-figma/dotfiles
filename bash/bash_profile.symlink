@@ -15,9 +15,6 @@ alias linkfrom="ln -s"
 alias python="python3"
 alias pip="pip3"
 
-# https://hub.github.com/
-alias git="hub"
-
 # Shortcut to most used repo
 alias gm="g ~/mobilize"
 
