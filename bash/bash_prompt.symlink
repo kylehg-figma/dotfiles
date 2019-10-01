@@ -1,5 +1,7 @@
 #!/bin/bash
 #
+# What follows is courtesy on insin: https://gist.github.com/1425703
+#
 # DESCRIPTION:
 #
 #   Set the bash prompt according to:
@@ -96,6 +98,11 @@ function set_virtualenv () {
   fi
 }
 
+# Added from https://coderwall.com/p/fasnya/add-git-branch-name-to-bash-prompt
+parse_git_branch() {
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+
 # Set the full bash prompt.
 function set_bash_prompt () {
   # Set the PROMPT_SYMBOL variable. We do this first so we don't lose the
@@ -106,16 +113,15 @@ function set_bash_prompt () {
   set_virtualenv
 
   # Set the BRANCH variable.
+  #BRANCH=${parse_git_branch}
   if is_git_repository ; then
-    set_git_branch
+    BRANCH=$(parse_git_branch)
   else
     BRANCH=''
   fi
 
   # Set the bash prompt variable.
-  PS1="
-${PYTHON_VIRTUALENV}${GREEN}\u@\h ${YELLOW}\w${COLOR_NONE} ${BRANCH}
-${PROMPT_SYMBOL} "
+  PS1="${PYTHON_VIRTUALENV}${GREEN}\u@\h ${YELLOW}\w${COLOR_NONE}${BRANCH} ${PROMPT_SYMBOL} "
 }
 
 # Tell bash to execute this function just before displaying its prompt.
