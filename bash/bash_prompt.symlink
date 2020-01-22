@@ -103,6 +103,10 @@ parse_git_branch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 
+function set_tab_title {
+  echo -n -e "\033]0;${PWD##*/}\007"
+}
+
 # Set the full bash prompt.
 function set_bash_prompt () {
   # Set the PROMPT_SYMBOL variable. We do this first so we don't lose the
@@ -111,6 +115,9 @@ function set_bash_prompt () {
 
   # Set the PYTHON_VIRTUALENV variable.
   set_virtualenv
+
+  # Set the tab title
+  set_tab_title
 
   # Set the BRANCH variable.
   #BRANCH=${parse_git_branch}
