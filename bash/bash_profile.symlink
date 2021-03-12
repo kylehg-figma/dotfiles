@@ -11,6 +11,7 @@ alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
 alias servedir="python -m http.server"
 alias linkfrom="ln -s"
 alias git="hub"
+alias gitstatusall="find . -maxdepth 1 -mindepth 1 -type d -exec sh -c '(echo {} && cd {} && git s && echo)' \;"
 
 # Potentially risky but ¯\_(ツ)_/¯
 alias python="python3"
