@@ -1,86 +1,88 @@
 [user]
-  name = Kyle Hardgrave
-  email = kylehardgrave@gmail.com
+	name = Kyle Hardgrave
+	email = kylehardgrave@gmail.com
 
 [alias]
-  # Use template "!sh -c 'git command $0'" for positional arguments
+	# Use template "!sh -c 'git command $0'" for positional arguments
 
-  # Branches and remotes
-  # Delete and remove an accepted branch:
-  accept = !sh -c 'git delete $0 && git remove $0'
-  b = branch
-  bv = branch -vv
-  co = checkout
-  pu = push -u
-  delete = branch -d  # Delete a merged branch
-  merged = branch --merged  # Show merged branches
-  new = checkout -b # Start a new branch
-  remove = !sh -c 'git push origin :$0' # Remove a remote branch
-  unmerged = branch --no-merged # Show unmerged branches
-  unpush = push -f origin HEAD^:master # Undo a push
-  pr = !git push -u && git pull-request -c
+	# Branches and remotes
+	# Delete and remove an accepted branch:
+	accept = !sh -c 'git delete $0 && git remove $0'
+	b = branch
+	bv = branch -vv
+	co = checkout
+	pu = push -u
+	delete = branch -d	# Delete a merged branch
+	merged = branch --merged	# Show merged branches
+	new = checkout -b # Start a new branch
+	remove = !sh -c 'git push origin :$0' # Remove a remote branch
+	unmerged = branch --no-merged # Show unmerged branches
+	unpush = push -f origin HEAD^:master # Undo a push
+	pr = !git push -u && git pull-request -c
 
-  # Commits
-  amend = commit --amend  # Amend the last commit
-  c = commit -m
-  ca = commit -am
-  discard = checkout -- # Discard changes in the working directory
-  # Undo the previous commit, and leave the changes in the index:
-  uncommit = reset --soft HEAD^
-  unstage = reset HEAD  # Unstage a file
-  unstash = stash pop # Remove from the stash and apply
-  # Save a snapshot stash without changing working tree
-  snapshot = !git stash save "snapshot: $(date)" && git stash apply "stash@{0}"
-  meh = commit --amend --no-edit .
+	# Commits
+	amend = commit --amend	# Amend the last commit
+	c = commit -m
+	ca = commit -am
+	discard = checkout -- # Discard changes in the working directory
+	# Undo the previous commit, and leave the changes in the index:
+	uncommit = reset --soft HEAD^
+	unstage = reset HEAD	# Unstage a file
+	unstash = stash pop # Remove from the stash and apply
+	# Save a snapshot stash without changing working tree
+	snapshot = !git stash save "snapshot: $(date)" && git stash apply "stash@{0}"
+	meh = commit --amend --no-edit .
 
-  # Diffs and feedback
-  difflast = diff HEAD^ # diff last committed change
-  diffstaged = diff --cached
-  last =  log -1 HEAD --stat --abbrev-commit  # Show the last commit
-  s = status -sb
-  ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%an]" --decorate
-  ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%an]" --decorate --numstat
-  lds = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%an]" --decorate --date=short
-  ld = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%an]" --decorate --date=relative
-  le = log --oneline --decorate
+	# Diffs and feedback
+	difflast = diff HEAD^ # diff last committed change
+	diffstaged = diff --cached
+	last =	log -1 HEAD --stat --abbrev-commit	# Show the last commit
+	s = status -sb
+	ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%an]" --decorate
+	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%an]" --decorate --numstat
+	lds = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%an]" --decorate --date=short
+	ld = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%an]" --decorate --date=relative
+	le = log --oneline --decorate
 
-  # Ignore changes to tracked files
-  assume   = update-index --assume-unchanged
-  unassume = update-index --no-assume-unchanged
-  assumed  = "!git ls-files -v | grep ^h | cut -c 3-"
+	# Ignore changes to tracked files
+	assume	 = update-index --assume-unchanged
+	unassume = update-index --no-assume-unchanged
+	assumed	= "!git ls-files -v | grep ^h | cut -c 3-"
 
 
 [core]
-  excludesfile = /Users/kyle/.gitignore_global
-  editor = emacs
+	excludesfile = /Users/kyle/.gitignore_global
+	editor = emacs
 
 [color]
-  ui = true
+	ui = true
 [color "branch"]
-  current = yellow reverse
-  local = yellow
-  remote = green
+	current = yellow reverse
+	local = yellow
+	remote = green
 [color "diff"]
-  meta = yellow bold
-  frag = magenta bold
-  old = red bold
-  new = green bold
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
 [color "status"]
-  added = yellow
-  changed = green
-  untracked = cyan
+	added = yellow
+	changed = green
+	untracked = cyan
 
 [help]
-  # Automatically correct and execute mistyped commands after waiting
-  # for the given number of deciseconds (0.1 sec). If more than one
-  # command can be deduced from the entered text, nothing will be
-  # executed. If the value of this option is negative, the corrected
-  # command will be executed immediately. If the value is 0 - the
-  # command will be just shown but not executed. This is the default.
-  autocorrect = -1
+	# Automatically correct and execute mistyped commands after waiting
+	# for the given number of deciseconds (0.1 sec). If more than one
+	# command can be deduced from the entered text, nothing will be
+	# executed. If the value of this option is negative, the corrected
+	# command will be executed immediately. If the value is 0 - the
+	# command will be just shown but not executed. This is the default.
+	autocorrect = -1
 
 [push]
-  default = current
+	default = current
 
 [hub]
-  protocol = https
+	protocol = https
+[pull]
+	ff = only
