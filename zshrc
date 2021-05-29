@@ -15,8 +15,8 @@ alias gitstatusall="find . -maxdepth 1 -mindepth 1 -type d -exec sh -c '(echo {}
 # ASDF version manager
 . /usr/local/opt/asdf/asdf.sh
 
-# Git completion
-[ -e ~/.git-completion.sh ] && source ~/.git-completion.sh
+# Setup autocompletion (includes git)
+autoload -Uz compinit && compinit
 
 # Put secret configuration settings in ~/.secrets
 [ -f ~/.secrets ] && source ~/.secrets
