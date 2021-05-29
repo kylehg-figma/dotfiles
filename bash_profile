@@ -1,42 +1,9 @@
-# Helpful aliases
-alias ls="ls -G"
-alias l="ls"
-alias ll="l -l"
-alias la="l -a"
-alias lla="l -la"
-
-alias cleanup="rm *~"
-alias untar="tar -xzvf"
-alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
-alias servedir="python -m http.server"
-alias linkfrom="ln -s"
-alias git="hub"
-alias gitstatusall="find . -maxdepth 1 -mindepth 1 -type d -exec sh -c '(echo {} && cd {} && git s && echo)' \;"
-
 # Potentially risky but ¯\_(ツ)_/¯
 alias python="python3"
 alias pip="pip3"
 
 # Shortcut to most used repo
 alias gm="g ~/mobilize/mobilize"
-
-export EDITOR=emacs
-
-export HISTCONTROL=ignorespace
-
-# Git completion
-[ -e ~/.git-completion.sh ] && source ~/.git-completion.sh
-
-# Put secret configuration settings in ~/.secrets
-[ -f ~/.secrets ] && source ~/.secrets
-
-# Go: Combines cd and ls for directories, or opens files in EMACS.
-g() {
-    cd $1 2> /dev/null && ls || $EDITOR $1
-}
-
-# Customize prompt
-source ~/.bash_prompt
 
 # Golang
 export GOPATH="$HOME/golang"
@@ -59,9 +26,6 @@ export PATH="$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin"
 
 # AWS CLI completion
 complete -C aws_completer aws
-
-# Personal executables
-[ -d $HOME/bin ] && export PATH="$PATH:$HOME/bin"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
