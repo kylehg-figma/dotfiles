@@ -86,3 +86,5 @@
 	protocol = https
 [pull]
 	ff = only
+[init]
+	defaultBranch = main
