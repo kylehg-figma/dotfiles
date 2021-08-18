@@ -130,3 +130,4 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 export PATH="$HOME/.poetry/bin:$PATH"
+eval "$(/opt/homebrew/bin/brew shellenv)"
