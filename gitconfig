@@ -32,6 +32,7 @@
 	# Save a snapshot stash without changing working tree
 	snapshot = !git stash save "snapshot: $(date)" && git stash apply "stash@{0}"
 	meh = commit --amend --no-edit .
+	wip = commit -am wip
 
 	# Diffs and feedback
 	difflast = diff HEAD^ # diff last committed change

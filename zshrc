@@ -13,7 +13,7 @@ alias linkfrom="ln -s"
 alias gitstatusall="find . -maxdepth 1 -mindepth 1 -type d -exec sh -c '(echo {} && cd {} && git s && echo)' \;"
 
 # ASDF version manager
-. /usr/local/opt/asdf/asdf.sh
+. /opt/homebrew/opt/asdf/asdf.sh
 
 # Setup autocompletion (includes git)
 autoload -Uz compinit && compinit
@@ -23,12 +23,19 @@ g() {
     cd $1 2> /dev/null && ls || $EDITOR $1
 }
 
+# Mobilize
+export DOCKER_BUILDKIT=1
+export COMPOSE_DOCKER_CLI_BUILD=1
+export AWS_MFA_SERIAL_NUMBER=arn:aws:iam::421642171856:mfa/Kyle
+export AWS_PROFILE=mobilize
+export REPUSH_FAIL_FAST=1
+export SKIP_LINT=1
 
 # Oh My Zsh RC Below
 # ==================
 
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+# export PATH=$HOME/bin:/opt/homebrew/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/kyle/.oh-my-zsh"
@@ -105,7 +112,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-# export MANPATH="/usr/local/man:$MANPATH"
+# export MANPATH="/opt/homebrew/man:$MANPATH"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
