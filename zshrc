@@ -31,6 +31,7 @@ export AWS_MFA_SERIAL_NUMBER=arn:aws:iam::421642171856:mfa/Kyle
 export AWS_PROFILE=mobilize
 export REPUSH_FAIL_FAST=1
 export SKIP_LINT=1
+export NO_DOCKER_COMPOSE=1
 
 # Various things to get server to run:
 
