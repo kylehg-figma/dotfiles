@@ -24,12 +24,45 @@ g() {
 }
 
 # Mobilize
+# ========
 export DOCKER_BUILDKIT=1
 export COMPOSE_DOCKER_CLI_BUILD=1
 export AWS_MFA_SERIAL_NUMBER=arn:aws:iam::421642171856:mfa/Kyle
 export AWS_PROFILE=mobilize
 export REPUSH_FAIL_FAST=1
 export SKIP_LINT=1
+
+# Various things to get server to run:
+
+# -----
+# To get pyicu to install: `brew install icu4c`
+
+# If you need to have icu4c first in your PATH, run:
+# export PATH="/opt/homebrew/opt/icu4c/bin:$PATH"
+# export PATH="/opt/homebrew/opt/icu4c/sbin:$PATH"
+
+# For compilers to find icu4c you may need to set:
+export LDFLAGS="-L/opt/homebrew/opt/icu4c/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/icu4c/include"
+
+# For pkg-config to find icu4c you may need to set:
+# export PKG_CONFIG_PATH="/opt/homebrew/opt/icu4c/lib/pkgconfig"
+
+# -----
+# To get psycopg to install: `brew install openssl`
+
+# If you need to have openssl@3 first in your PATH, run:
+# export PATH="/opt/homebrew/opt/openssl@3/bin:$PATH"
+
+# For compilers to find openssl@3 you may need to set:
+export LDFLAGS="-L/opt/homebrew/opt/openssl@3/lib $LDFLAGS"
+export CPPFLAGS="-I/opt/homebrew/opt/openssl@3/include $CPPFLAGS"
+
+# For pkg-config to find openssl@3 you may need to set:
+# export PKG_CONFIG_PATH="/opt/homebrew/opt/openssl@3/lib/pkgconfig"
+
+# ============
+# End Mobilize
 
 # Oh My Zsh RC Below
 # ==================
