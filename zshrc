@@ -38,28 +38,28 @@ export SKIP_LINT=1
 # To get pyicu to install: `brew install icu4c`
 
 # If you need to have icu4c first in your PATH, run:
-# export PATH="/opt/homebrew/opt/icu4c/bin:$PATH"
-# export PATH="/opt/homebrew/opt/icu4c/sbin:$PATH"
+export PATH="/opt/homebrew/opt/icu4c/bin:$PATH"
+export PATH="/opt/homebrew/opt/icu4c/sbin:$PATH"
 
 # For compilers to find icu4c you may need to set:
-export LDFLAGS="-L/opt/homebrew/opt/icu4c/lib"
-export CPPFLAGS="-I/opt/homebrew/opt/icu4c/include"
+export LDFLAGS="-L/opt/homebrew/opt/icu4c/lib $LDFLAGS"
+export CPPFLAGS="-I/opt/homebrew/opt/icu4c/include $CPPFLAGS"
 
 # For pkg-config to find icu4c you may need to set:
-# export PKG_CONFIG_PATH="/opt/homebrew/opt/icu4c/lib/pkgconfig"
+export PKG_CONFIG_PATH="/opt/homebrew/opt/icu4c/lib/pkgconfig"
 
 # -----
 # To get psycopg to install: `brew install openssl`
 
 # If you need to have openssl@3 first in your PATH, run:
-# export PATH="/opt/homebrew/opt/openssl@3/bin:$PATH"
+export PATH="/opt/homebrew/opt/openssl@3/bin:$PATH"
 
 # For compilers to find openssl@3 you may need to set:
 export LDFLAGS="-L/opt/homebrew/opt/openssl@3/lib $LDFLAGS"
 export CPPFLAGS="-I/opt/homebrew/opt/openssl@3/include $CPPFLAGS"
 
 # For pkg-config to find openssl@3 you may need to set:
-# export PKG_CONFIG_PATH="/opt/homebrew/opt/openssl@3/lib/pkgconfig"
+export PKG_CONFIG_PATH="/opt/homebrew/opt/openssl@3/lib/pkgconfig"
 
 # ============
 # End Mobilize
