@@ -1,6 +1,6 @@
 [user]
+	email = khardgrave@figma.com
 	name = Kyle Hardgrave
-	email = kylehardgrave@gmail.com
 
 [alias]
 	# Use template "!sh -c 'git command $0'" for positional arguments
