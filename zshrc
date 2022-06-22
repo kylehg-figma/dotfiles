@@ -12,14 +12,11 @@ alias servedir="python -m http.server"
 alias linkfrom="ln -s"
 alias gitstatusall="find . -maxdepth 1 -mindepth 1 -type d -exec sh -c '(echo {} && cd {} && git s && echo)' \;"
 
-# ASDF version manager
-. /opt/homebrew/opt/asdf/asdf.sh
-
 # Setup autocompletion (includes git)
 autoload -Uz compinit && compinit
 
 # Go: Combines cd and ls for directories, or opens files in EMACS.
-g() {
+function g {
     cd $1 2> /dev/null && ls || $EDITOR $1
 }
 
@@ -147,3 +144,4 @@ source $ZSH/oh-my-zsh.sh
 
 export PATH="$HOME/.poetry/bin:$PATH"
 eval "$(/opt/homebrew/bin/brew shellenv)"
+unalias g
