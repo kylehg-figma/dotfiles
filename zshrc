@@ -144,4 +144,3 @@ source $ZSH/oh-my-zsh.sh
 
 export PATH="$HOME/.poetry/bin:$PATH"
 eval "$(/opt/homebrew/bin/brew shellenv)"
-unalias g
