@@ -20,6 +20,12 @@ function g {
     cd $1 2> /dev/null && ls || $EDITOR $1
 }
 
+# Poetry
+export PATH="$HOME/.poetry/bin:$PATH"
+
+# Homebrew
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # Figma
 # =====
 
@@ -39,8 +45,6 @@ export RACK_ENV=development
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="/opt/homebrew/opt/openssl@3/bin:$PATH"
 export AWS_CONFIG_FILE="$HOME/figma/figma/config/aws/sso_config"
-
-ssh-add -A 2> /dev/null;
 
 # =========
 # End Figma
@@ -152,6 +156,3 @@ source $ZSH/oh-my-zsh.sh
 
 # End Oh My Zsh RC
 # ================
-
-export PATH="$HOME/.poetry/bin:$PATH"
-eval "$(/opt/homebrew/bin/brew shellenv)"
