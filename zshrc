@@ -23,6 +23,12 @@ function g {
 # Figma
 # =====
 
+alias gf="g ~/figma/figma"
+alias gfc="gf ~/figma/figma && code figma.code-workspace"
+
+alias tt='RACK_ENV=test bundle exec ruby $1'
+ttt() { RACK_ENV=test bundle exec ruby "$1" --name="$2" }
+
 export PATH="${HOMEBREW_PREFIX}/opt/openssl/bin:$PATH"
 export PKG_CONFIG_PATH="/opt/homebrew/opt/zlib/lib/pkgconfig:/usr/local/opt/zlib/lib/pkgconfig:$PKG_CONFIG_PATH"
 export PKG_CONFIG_PATH="/opt/homebrew/opt/openssl@3/lib/pkgconfig:/usr/local/opt/openssl@3/lib/pkgconfig:$PKG_CONFIG_PATH"
@@ -33,6 +39,8 @@ export RACK_ENV=development
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="/opt/homebrew/opt/openssl@3/bin:$PATH"
 export AWS_CONFIG_FILE="$HOME/figma/figma/config/aws/sso_config"
+
+ssh-add -A 2> /dev/null;
 
 # =========
 # End Figma
@@ -141,6 +149,9 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# End Oh My Zsh RC
+# ================
 
 export PATH="$HOME/.poetry/bin:$PATH"
 eval "$(/opt/homebrew/bin/brew shellenv)"
