@@ -14,11 +14,12 @@
 	pu = push -u
 	delete = branch -d	# Delete a merged branch
 	merged = branch --merged	# Show merged branches
-	new = checkout -b # Start a new branch
+	new = !sh -c 'git checkout -b kylehg/$(date "+%Y-%m-%d")/$0' # Start a new branch
 	remove = !sh -c 'git push origin :$0' # Remove a remote branch
 	unmerged = branch --no-merged # Show unmerged branches
-	unpush = push -f origin HEAD^:master # Undo a push
-	pr = !git push -u && git pull-request -c
+	unpush = push -f origin HEAD^:master # Undo a
+	sync = !git co master && git pull && git co - && git rebase master && bundle install
+	pr = !git push -u && gh pr create -df | pbcopy
 
 	# Commits
 	amend = commit --amend	# Amend the last commit
@@ -31,7 +32,7 @@
 	unstash = stash pop # Remove from the stash and apply
 	# Save a snapshot stash without changing working tree
 	snapshot = !git stash save "snapshot: $(date)" && git stash apply "stash@{0}"
-	meh = commit --amend --no-edit .
+	meh = commit --amend --no-edit --no-verify .
 	wip = commit --no-verify -am wip
 
 	# Diffs and feedback

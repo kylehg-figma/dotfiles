@@ -35,6 +35,8 @@ alias gfc="gf ~/figma/figma && code figma.code-workspace"
 alias tt='RACK_ENV=test bundle exec ruby $1'
 ttt() { RACK_ENV=test bundle exec ruby "$1" --name="$2" }
 
+alias runtestdeps="docker compose -f local-docker-compose.yml up"
+
 export PATH="${HOMEBREW_PREFIX}/opt/openssl/bin:$PATH"
 export PKG_CONFIG_PATH="/opt/homebrew/opt/zlib/lib/pkgconfig:/usr/local/opt/zlib/lib/pkgconfig:$PKG_CONFIG_PATH"
 export PKG_CONFIG_PATH="/opt/homebrew/opt/openssl@3/lib/pkgconfig:/usr/local/opt/openssl@3/lib/pkgconfig:$PKG_CONFIG_PATH"
