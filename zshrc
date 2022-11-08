@@ -11,6 +11,7 @@ alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
 alias servedir="python -m http.server"
 alias linkfrom="ln -s"
 alias gitstatusall="find . -maxdepth 1 -mindepth 1 -type d -exec sh -c '(echo {} && cd {} && git s && echo)' \;"
+alias gitdeletemerged="git fetch -p && for branch in $(git branch -vv | grep ': gone]' | awk '{print $1}'); do git branch -D $branch; done"
 
 # Setup autocompletion (includes git)
 autoload -Uz compinit && compinit
