@@ -15,12 +15,13 @@
 	pf = push -f
 	delete = branch -d	# Delete a merged branch
 	merged = branch --merged	# Show merged branches
-	new = !sh -c 'git checkout -b kylehg/$(date "+%Y-%m-%d")/$0' # Start a new branch
+	new = !sh -c 'git checkout -b khg/$0/$(date "+%Y-%m-%d")' # Start a new branch
 	remove = !sh -c 'git push origin :$0' # Remove a remote branch
 	unmerged = branch --no-merged # Show unmerged branches
 	unpush = push -f origin HEAD^:master # Undo a
 	sync = !git co master && git pull && git co - && git rebase master && bundle install
 	pr = !git push -u && gh pr create -df | pbcopy
+	fresh = !git checkout master && git pull --rebase origin master && git delete-merged-branches
 
 	# Commits
 	amend = commit --amend	# Amend the last commit

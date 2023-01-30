@@ -11,7 +11,6 @@ alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
 alias servedir="python -m http.server"
 alias linkfrom="ln -s"
 alias gitstatusall="find . -maxdepth 1 -mindepth 1 -type d -exec sh -c '(echo {} && cd {} && git s && echo)' \;"
-alias gitdeletemerged="git fetch -p && for branch in $(git branch -vv | grep ': gone]' | awk '{print $1}'); do git branch -D $branch; done"
 
 # Setup autocompletion (includes git)
 autoload -Uz compinit && compinit
@@ -27,6 +26,11 @@ export PATH="$HOME/.poetry/bin:$PATH"
 # Homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
+# Pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
 # Figma
 # =====
 
@@ -38,6 +42,13 @@ ttt() { RACK_ENV=test bundle exec ruby "$1" --name="$2" }
 
 alias runtestdeps="docker compose -f local-docker-compose.yml up"
 
+alias exec-dev="aws-vault exec dev-admin --"
+alias exec-staging="aws-vault exec staging-admin --"
+alias exec-prod="aws-vault exec prod-admin --"
+
+alias tfstaging="TF_WORKSPACE=staging aws-vault exec staging-admin -- terraform"
+alias tfprod="TF_WORKSPACE=production aws-vault exec prod-admin -- terraform"
+
 export PATH="${HOMEBREW_PREFIX}/opt/openssl/bin:$PATH"
 export PKG_CONFIG_PATH="/opt/homebrew/opt/zlib/lib/pkgconfig:/usr/local/opt/zlib/lib/pkgconfig:$PKG_CONFIG_PATH"
 export PKG_CONFIG_PATH="/opt/homebrew/opt/openssl@3/lib/pkgconfig:/usr/local/opt/openssl@3/lib/pkgconfig:$PKG_CONFIG_PATH"
@@ -48,6 +59,7 @@ export RACK_ENV=development
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="/opt/homebrew/opt/openssl@3/bin:$PATH"
 export AWS_CONFIG_FILE="$HOME/figma/figma/config/aws/sso_config"
+export PATH="/Users/khardgrave/figma/figma:$PATH"
 
 # =========
 # End Figma
