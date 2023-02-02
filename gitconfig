@@ -99,3 +99,5 @@
 	required = true
 [rebase]
 	updateRefs = true
+[advice]
+	statusHints = false
