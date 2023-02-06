@@ -31,6 +31,11 @@ export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
+# This seems like it shouldn't be necessary but it is
+export APPLE_SSH_ADD_BEHAVIOR="macos"
+ssh-add -A 2> /dev/null
+
+
 # Figma
 # =====
 
