@@ -101,3 +101,5 @@
 	updateRefs = true
 [advice]
 	statusHints = false
+[fetch]
+	prune = true
