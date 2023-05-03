@@ -65,8 +65,11 @@ export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="/opt/homebrew/opt/openssl@3/bin:$PATH"
 export AWS_CONFIG_FILE="$HOME/figma/figma/config/aws/sso_config"
 export PATH="/Users/khardgrave/figma/figma:$PATH"
-# For fig-scm
-export PATH=/Users/khardgrave/figma/figma/devex/bins:$PATH
+
+# For fig-scm/branchless - interferes too much as of now
+# export PATH=/Users/khardgrave/figma/figma/devex/bins:$PATH
+
+source /Users/khardgrave/.figbt/figbtrc # MANAGED BY FIGBT
 
 # =========
 # End Figma

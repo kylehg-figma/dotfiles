@@ -13,15 +13,16 @@
 	co = checkout
 	pu = push -u
 	pf = push -f
+	sw = switch
 	delete = branch -d	# Delete a merged branch
 	merged = branch --merged	# Show merged branches
 	new = !sh -c 'git checkout -b khg/$0/$(date "+%Y-%m-%d")' # Start a new branch
 	remove = !sh -c 'git push origin :$0' # Remove a remote branch
 	unmerged = branch --no-merged # Show unmerged branches
 	unpush = push -f origin HEAD^:master # Undo a
-	sync = !git co master && git pull && git co - && git rebase master && bundle install
+	sync = !git checkout master && git pull && git co - && git rebase master
+	fresh = !git checkout master && git pull && git delete-merged-branches
 	pr = !git push -u && gh pr create -df | pbcopy
-	fresh = !git checkout master && git pull --rebase origin master && git delete-merged-branches
 
 	# Commits
 	amend = commit --amend	# Amend the last commit
@@ -36,6 +37,8 @@
 	snapshot = !git stash save "snapshot: $(date)" && git stash apply "stash@{0}"
 	meh = commit --amend --no-edit --no-verify .
 	wip = commit --no-verify -am wip
+	cleanup = clean -df
+	superclean = git unstage . && git discard . && git clean -df
 
 	# Diffs and feedback
 	difflast = diff HEAD^ # diff last committed change
