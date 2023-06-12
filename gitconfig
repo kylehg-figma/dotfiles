@@ -1,6 +1,6 @@
 [user]
-	email = khardgrave@figma.com
-	name = kylehg-figma
+	email = kylehardgrave@gmail.com
+	name = Kyle Hardgrave
 
 [alias]
 	# Use template "!sh -c 'git command $0'" for positional arguments
@@ -11,6 +11,7 @@
 	b = branch
 	bv = branch -vv
 	co = switch
+	p = push
 	pu = push -u
 	pf = push -f
 	delete = branch -d	# Delete a merged branch
