@@ -11,8 +11,7 @@
 	b = branch
 	bv = branch -vv
 	co = switch
-	p = push
-	pu = push -u
+	pu = push
 	pf = push -f
 	delete = branch -d	# Delete a merged branch
 	merged = branch --merged	# Show merged branches
@@ -37,7 +36,7 @@
 	# Save a snapshot stash without changing working tree
 	snapshot = !git stash save "snapshot: $(date)" && git stash apply "stash@{0}"
 	meh = commit --amend --no-edit --no-verify .
-	wip = commit --no-verify -am wip
+	wip = "!git commit -anm \"wip: $(date)\""
 	cleanup = clean -df
 	superclean = !git unstage . && git discard . && git clean -df
 
