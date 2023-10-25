@@ -22,7 +22,7 @@
 	# Seems to be causing weird history loss when run on master
 	sync = !git checkout master && git pull && git co - && git rebase master
 	fresh = !git checkout master && git pull && git delete-merged-branches
-	pr = !git push -u && gh pr create -df | pbcopy
+	pr = !git push -u && gh pr create -df | pbcopy && open $(pbpaste)
 
 	# Commits
 	amend = commit --amend	# Amend the last commit
@@ -36,7 +36,7 @@
 	# Save a snapshot stash without changing working tree
 	snapshot = !git stash save "snapshot: $(date)" && git stash apply "stash@{0}"
 	meh = commit --amend --no-edit --no-verify .
-	wip = "!git commit -anm \"wip: $(date)\""
+	wip = !sh -c 'git commit -anm \"wip: $(date) $0\"'
 	cleanup = clean -df
 	superclean = !git unstage . && git discard . && git clean -df
 
