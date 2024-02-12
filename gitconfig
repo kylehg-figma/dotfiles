@@ -8,18 +8,18 @@
 	# Branches and remotes
 	# Delete and remove an accepted branch:
 	accept = !sh -c 'git delete $0 && git remove $0'
-	b = branch
+	b = !git --no-pager branch
 	bv = branch -vv
 	co = switch
 	pu = push
 	pf = push -f
-	delete = branch -d	# Delete a merged branch
-	merged = branch --merged	# Show merged branches
+	delete = branch -d # Delete a merged branch
+	rmrf = branch -D # Force delete a branch
+	merged = branch --merged # Show merged branches
 	new = !sh -c 'git checkout -b khg/$0/$(date "+%Y-%m-%d")' # Start a new branch
 	remove = !sh -c 'git push origin :$0' # Remove a remote branch
 	unmerged = branch --no-merged # Show unmerged branches
-	unpush = push -f origin HEAD^:master # Undo a
-	# Seems to be causing weird history loss when run on master
+	unpush = push -f origin HEAD^:master # Undo a push
 	sync = !git checkout master && git pull && git co - && git rebase master
 	fresh = !git checkout master && git pull && git delete-merged-branches
 	pr = !git push -u && gh pr create -df | pbcopy && open $(pbpaste)
