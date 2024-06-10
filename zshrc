@@ -5,6 +5,8 @@ alias ll="l -l"
 alias la="l -a"
 alias lla="l -la"
 
+alias rm="rm -v"
+
 alias cleanup="rm *~"
 alias untar="tar -xzvf"
 alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
@@ -47,12 +49,12 @@ ttt() { RACK_ENV=test bundle exec ruby "$1" --name="$2" }
 
 alias runtestdeps="docker compose -f local-docker-compose.yml up"
 
-alias exec-dev="aws-vault exec dev-admin --"
-alias exec-staging="aws-vault exec staging-admin --"
-alias exec-prod="aws-vault exec prod-admin --"
+alias exec-dev="access aws exec dev-admin --"
+alias exec-staging="access aws exec staging-admin --"
+alias exec-prod="access aws exec prod-admin --"
 
-alias tfstaging="TF_WORKSPACE=staging aws-vault exec staging-admin -- terraform"
-alias tfprod="TF_WORKSPACE=production aws-vault exec prod-admin -- terraform"
+alias tfstaging="TF_WORKSPACE=staging access aws exec staging-admin -- terraform"
+alias tfprod="TF_WORKSPACE=production access aws exec prod-admin -- terraform"
 
 export PATH="${HOMEBREW_PREFIX}/opt/openssl/bin:$PATH"
 export PKG_CONFIG_PATH="/opt/homebrew/opt/zlib/lib/pkgconfig:/usr/local/opt/zlib/lib/pkgconfig:$PKG_CONFIG_PATH"
@@ -181,3 +183,4 @@ source $ZSH/oh-my-zsh.sh
 
 # End Oh My Zsh RC
 # ================
+source /Users/khardgrave/.config/op/plugins.sh
