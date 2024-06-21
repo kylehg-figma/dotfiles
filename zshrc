@@ -17,6 +17,11 @@ alias gitstatusall="find . -maxdepth 1 -mindepth 1 -type d -exec sh -c '(echo {}
 # Setup autocompletion (includes git)
 autoload -Uz compinit && compinit
 
+# touchp: creates a file and its parent directories
+touchp() {
+    mkdir -p "$(dirname "$1")" && { [ ! -e "$1" ] && touch "$1"; } || echo "Error: File already exists"
+}
+
 # Go: Combines cd and ls for directories, or opens files in EMACS.
 function g {
     cd $1 2> /dev/null && ls || $EDITOR $1
@@ -184,3 +189,23 @@ source $ZSH/oh-my-zsh.sh
 # End Oh My Zsh RC
 # ================
 source /Users/khardgrave/.config/op/plugins.sh
+#compdef gt
+###-begin-gt-completions-###
+#
+# yargs command completion script
+#
+# Installation: gt completion >> ~/.zshrc
+#    or gt completion >> ~/.zprofile on OSX.
+#
+_gt_yargs_completions()
+{
+  local reply
+  local si=$IFS
+  IFS=$'
+' reply=($(COMP_CWORD="$((CURRENT-1))" COMP_LINE="$BUFFER" COMP_POINT="$CURSOR" gt --get-yargs-completions "${words[@]}"))
+  IFS=$si
+  _describe 'values' reply
+}
+compdef _gt_yargs_completions gt
+###-end-gt-completions-###
+
